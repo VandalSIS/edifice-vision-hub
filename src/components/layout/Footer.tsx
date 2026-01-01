@@ -11,11 +11,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* About Column */}
           <div className="space-y-6">
-            <div className="bg-primary p-3 inline-block">
-              <span className="font-heading text-3xl text-primary-foreground tracking-wider">
-                MEGAPARC
-              </span>
-            </div>
+            <img 
+              src="/logo.png" 
+              alt="Megaparc - We build the Future" 
+              className="h-16 w-auto"
+            />
             <p className="text-secondary-foreground/70 leading-relaxed">
               Construim viitorul împreună. Cu peste 30 de ani de experiență în construcții 
               rezidențiale, comerciale și industriale, suntem partenerul de încredere pentru 

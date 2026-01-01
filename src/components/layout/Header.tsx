@@ -41,17 +41,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-primary p-2 transition-transform duration-300 group-hover:scale-105">
-              <span className="font-heading text-2xl md:text-3xl text-primary-foreground tracking-wider">
-                MEGAPARC
-              </span>
-            </div>
-            <span className={`hidden md:block text-xs uppercase tracking-widest transition-colors duration-300 ${
-              isScrolled ? 'text-muted-foreground' : 'text-background/80'
-            }`}>
-              We build the Future
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src="/eeeee.jpg" 
+              alt="Megaparc - We build the Future" 
+              className="h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}
