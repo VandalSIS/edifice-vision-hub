@@ -43,7 +43,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
-              src="/eeeee.jpg" 
+              src="/logo.png" 
               alt="Megaparc - We build the Future" 
               className="h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
             />
