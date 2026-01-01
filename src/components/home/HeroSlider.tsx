@@ -1,0 +1,151 @@
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+
+const slides = [
+  {
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop&q=80',
+    title: 'Construim Viitorul',
+    subtitle: 'Împreună',
+    description: 'Peste 30 de ani de experiență în construcții rezidențiale, comerciale și industriale.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&q=80',
+    title: 'Calitate și',
+    subtitle: 'Profesionalism',
+    description: 'Fiecare proiect este o dovadă a angajamentului nostru pentru excelență.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&q=80',
+    title: 'Inovație în',
+    subtitle: 'Construcții',
+    description: 'Tehnologii moderne și soluții sustenabile pentru proiecte de viitor.',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&h=1080&fit=crop&q=80',
+    title: 'Echipă de',
+    subtitle: 'Experți',
+    description: 'Profesioniști dedicați care transformă viziunea în realitate.',
+  },
+];
+
+const HeroSlider = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [currentSlide]);
+
+  const nextSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setTimeout(() => setIsAnimating(false), 800);
+  };
+
+  const prevSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setTimeout(() => setIsAnimating(false), 800);
+  };
+
+  return (
+    <section className="relative h-screen overflow-hidden">
+      {/* Slides */}
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-all duration-1000 ease-out ${
+            index === currentSlide
+              ? 'opacity-100 scale-100'
+              : 'opacity-0 scale-105'
+          }`}
+        >
+          {/* Background Image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/70 to-transparent" />
+          </div>
+
+          {/* Content */}
+          <div className="relative h-full container mx-auto px-4 flex items-center">
+            <div className="max-w-3xl">
+              <div
+                className={`space-y-6 ${
+                  index === currentSlide ? 'animate-fade-up' : ''
+                }`}
+              >
+                <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-background tracking-wider leading-none">
+                  {slide.title}
+                  <br />
+                  <span className="text-primary">{slide.subtitle}</span>
+                </h1>
+                <p className="text-lg md:text-xl text-background/80 max-w-xl">
+                  {slide.description}
+                </p>
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <Button variant="hero" size="lg" asChild>
+                    <Link to="/proiecte">Vezi Proiecte</Link>
+                  </Button>
+                  <Button variant="outline" size="lg" className="border-background text-background hover:bg-background hover:text-secondary" asChild>
+                    <Link to="/contact">Solicită Ofertă</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/10 backdrop-blur-sm border border-background/20 flex items-center justify-center text-background transition-all duration-300 hover:bg-primary hover:border-primary"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/10 backdrop-blur-sm border border-background/20 flex items-center justify-center text-background transition-all duration-300 hover:bg-primary hover:border-primary"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`h-1 transition-all duration-500 ${
+              index === currentSlide ? 'w-12 bg-primary' : 'w-6 bg-background/50'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 right-8 hidden md:flex flex-col items-center gap-2 text-background/60">
+        <span className="text-xs uppercase tracking-widest rotate-90 origin-center translate-y-8">
+          Scroll
+        </span>
+        <div className="w-px h-16 bg-background/30 relative overflow-hidden">
+          <div className="absolute top-0 w-full h-1/2 bg-primary animate-bounce" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default HeroSlider;
