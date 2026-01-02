@@ -38,10 +38,10 @@ const ServicesSection = () => {
             Ce Oferim
           </span>
           <h2 className="section-title mt-4">
-            Serviciile Noastre
+            Domeniile Noastre
           </h2>
           <p className="section-subtitle mx-auto mt-4">
-            De la concept la finalizare, oferim soluții complete pentru toate tipurile de investiții imobiliare.
+            De la concept la finalizare, oferim soluții complete pentru toate tipurile de investiții.
           </p>
         </div>
 
