@@ -56,7 +56,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative h-[80vh] min-h-[600px] max-h-[850px] overflow-hidden">
+    <section className="relative h-[70vh] min-h-[500px] max-h-[650px] overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -77,13 +77,13 @@ const HeroSlider = () => {
 
           {/* Content */}
           <div className="relative h-full container mx-auto px-4 flex items-center">
-            <div className="max-w-3xl">
+            <div className="max-w-2xl">
               <div
-                className={`space-y-6 ${
+                className={`space-y-5 ${
                   index === currentSlide ? 'animate-fade-up' : ''
                 }`}
               >
-                <h1 className="font-heading text-6xl md:text-7xl lg:text-8xl text-background tracking-wider leading-none">
+                <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl text-background tracking-wider leading-none">
                   {slide.title}
                   <br />
                   <span className="text-primary">{slide.subtitle}</span>
@@ -91,7 +91,7 @@ const HeroSlider = () => {
                 <p className="text-lg md:text-xl text-background/80 max-w-xl">
                   {slide.description}
                 </p>
-                <div className="flex flex-wrap gap-4 pt-4">
+                <div className="flex flex-wrap gap-4 pt-3">
                   <Button variant="hero" size="lg" asChild>
                     <Link to="/proiecte">Vezi Proiecte</Link>
                   </Button>
