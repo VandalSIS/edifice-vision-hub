@@ -5,9 +5,9 @@ import { Menu, X, Phone } from 'lucide-react';
 const navigation = [
   { name: 'Acasă', href: '/' },
   { name: 'Despre Noi', href: '/despre-noi' },
-  { name: 'Istorie', href: '/istorie' },
   { name: 'Activități', href: '/activitati' },
   { name: 'Proiecte', href: '/proiecte' },
+  { name: 'Știri', href: '/stiri' },
   { name: 'Cariere', href: '/cariere' },
   { name: 'Contact', href: '/contact' },
 ];

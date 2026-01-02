@@ -9,6 +9,7 @@ import DespreNoi from "./pages/DespreNoi";
 import Istorie from "./pages/Istorie";
 import Activitati from "./pages/Activitati";
 import Proiecte from "./pages/Proiecte";
+import Stiri from "./pages/Stiri";
 import Cariere from "./pages/Cariere";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/istorie" element={<Istorie />} />
             <Route path="/activitati" element={<Activitati />} />
             <Route path="/proiecte" element={<Proiecte />} />
+            <Route path="/stiri" element={<Stiri />} />
             <Route path="/cariere" element={<Cariere />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
