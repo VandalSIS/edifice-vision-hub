@@ -56,7 +56,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative h-[70vh] min-h-[500px] max-h-[650px] overflow-hidden">
+    <section className="relative h-[75vh] min-h-[550px] max-h-[700px] overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
@@ -76,7 +76,7 @@ const HeroSlider = () => {
           </div>
 
           {/* Content */}
-          <div className="relative h-full container mx-auto px-4 flex items-center">
+          <div className="relative h-full container mx-auto px-4 flex items-end pb-24">
             <div className="max-w-2xl">
               <div
                 className={`space-y-5 ${
