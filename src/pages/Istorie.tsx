@@ -7,49 +7,49 @@ const timelineEvents = [
   {
     year: '1995',
     title: 'Înființarea Megaparc',
-    description: 'Fondarea companiei cu o echipă de 10 profesioniști dedicați construcțiilor de calitate.',
+    description: 'Fondarea companiei cu viziunea de a deveni lider în investiții imobiliare în Moldova.',
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop&q=80',
   },
   {
     year: '2000',
-    title: 'Primul Proiect Major',
-    description: 'Finalizarea primului complex rezidențial cu 50 de apartamente în centrul Chișinăului.',
+    title: 'Prima Investiție Majoră',
+    description: 'Investiție de 5 milioane euro în primul complex rezidențial premium din centrul Chișinăului.',
     image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop&q=80',
   },
   {
     year: '2005',
-    title: 'Extindere în Construcții Comerciale',
-    description: 'Diversificarea activității prin intrarea pe piața construcțiilor comerciale și industriale.',
+    title: 'Diversificare Portofoliu',
+    description: 'Extinderea investițiilor în sectorul comercial și industrial, cu randamente de peste 15% anual.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop&q=80',
   },
   {
     year: '2010',
-    title: 'Certificare ISO 9001',
-    description: 'Obținerea certificării internaționale pentru sistemul de management al calității.',
+    title: 'Parteneriate Strategice',
+    description: 'Atragerea investitorilor internaționali și formarea de parteneriate pentru proiecte de anvergură.',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop&q=80',
   },
   {
     year: '2015',
-    title: '100+ Proiecte Finalizate',
-    description: 'Atingerea bornei de 100 de proiecte de succes în toate categoriile de construcții.',
+    title: '100 Milioane Euro Investiți',
+    description: 'Atingerea pragului de 100 milioane euro în investiții cumulate pe piața imobiliară.',
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&h=400&fit=crop&q=80',
   },
   {
     year: '2018',
-    title: 'Lansare Departament Investiții',
-    description: 'Crearea diviziei de investiții imobiliare pentru dezvoltare proprie și parteneriate.',
+    title: 'Fond de Investiții Propriu',
+    description: 'Lansarea fondului de investiții Megaparc Capital pentru oportunități imobiliare exclusive.',
     image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop&q=80',
   },
   {
     year: '2020',
-    title: 'Tehnologii Verzi',
-    description: 'Implementarea soluțiilor de construcție sustenabilă și eficiență energetică.',
+    title: 'Investiții Sustenabile',
+    description: 'Focusare pe investiții în proiecte verzi și eficiente energetic cu potențial de creștere.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop&q=80',
   },
   {
     year: '2025',
-    title: 'Lider pe Piață',
-    description: 'Consolidarea poziției de lider pe piața construcțiilor din Moldova cu 500+ proiecte.',
+    title: 'Lider în Investiții',
+    description: 'Cel mai mare portofoliu de investiții imobiliare din Moldova cu 500+ proiecte și 250M€ active.',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop&q=80',
   },
 ];
@@ -116,11 +116,11 @@ const Istorie = () => {
             {/* Section Header */}
             <div className="text-center max-w-3xl mx-auto mb-20">
               <span className="text-primary font-semibold uppercase tracking-widest text-sm">
-                De-a Lungul Anilor
+                Istoria Investițiilor Noastre
               </span>
-              <h2 className="section-title mt-4">Etapele Cheie</h2>
+              <h2 className="section-title mt-4">30 de Ani de Succes</h2>
               <p className="section-subtitle mx-auto mt-4">
-                O călătorie de transformare și creștere continuă
+                O călătorie de investiții inteligente și creștere continuă a portofoliului
               </p>
             </div>
 

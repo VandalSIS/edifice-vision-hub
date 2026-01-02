@@ -59,6 +59,7 @@ const Footer = () => {
               {[
                 { name: 'Acasă', href: '/' },
                 { name: 'Despre Noi', href: '/despre-noi' },
+                { name: 'Istorie', href: '/istorie' },
                 { name: 'Activități', href: '/activitati' },
                 { name: 'Proiecte', href: '/proiecte' },
                 { name: 'Știri', href: '/stiri' },
