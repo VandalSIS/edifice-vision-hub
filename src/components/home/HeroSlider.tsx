@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 const slides = [
   {
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop&q=80',
-    title: 'Construim Viitorul',
-    subtitle: 'Împreună',
-    description: 'Peste 30 de ani de experiență în construcții rezidențiale, comerciale și industriale.',
+    title: 'Investim în',
+    subtitle: 'Viitorul Tău',
+    description: 'Peste 30 de ani de experiență în imobiliare, investiții și dezvoltare.',
   },
   {
     image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&q=80',
@@ -19,7 +19,7 @@ const slides = [
   {
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&q=80',
     title: 'Inovație în',
-    subtitle: 'Construcții',
+    subtitle: 'Investiții',
     description: 'Tehnologii moderne și soluții sustenabile pentru proiecte de viitor.',
   },
   {

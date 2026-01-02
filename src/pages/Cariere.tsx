@@ -31,8 +31,8 @@ const Cariere = () => {
   return (
     <>
       <Helmet>
-        <title>Cariere - Megaparc | Locuri de Muncă în Construcții</title>
-        <meta name="description" content="Alătură-te echipei Megaparc! Descoperă oportunitățile de carieră în construcții și dezvoltare profesională." />
+        <title>Cariere - Megaparc | Locuri de Muncă în Imobiliare și Investiții</title>
+        <meta name="description" content="Alătură-te echipei Megaparc! Descoperă oportunitățile de carieră în imobiliare și dezvoltare profesională." />
       </Helmet>
       <Layout>
         <PageHero

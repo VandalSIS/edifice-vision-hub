@@ -203,8 +203,8 @@ const Proiecte = () => {
   return (
     <>
       <Helmet>
-        <title>Proiecte - Megaparc | Portofoliu Construcții Moldova</title>
-        <meta name="description" content="Explorați portofoliul Megaparc - peste 500 de proiecte finalizate în construcții rezidențiale, comerciale și industriale în Moldova." />
+        <title>Proiecte - Megaparc | Portofoliu Imobiliare și Investiții Moldova</title>
+        <meta name="description" content="Explorați portofoliul Megaparc - peste 500 de proiecte finalizate în imobiliare rezidențial, comercial și industrial în Moldova." />
       </Helmet>
       <Layout>
         <PageHero

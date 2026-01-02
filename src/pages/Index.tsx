@@ -10,11 +10,11 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Megaparc - Construcții, Imobiliare, Investiții | Chișinău, Moldova</title>
-        <meta name="description" content="Megaparc - Companie lider în construcții rezidențiale, comerciale și industriale. 30+ ani experiență, 500+ proiecte finalizate în Moldova." />
-        <meta name="keywords" content="construcții Moldova, construcții Chișinău, companie construcții, imobiliare Moldova, investiții imobiliare" />
+        <title>Megaparc - Imobiliare, Investiții, Dezvoltare | Chișinău, Moldova</title>
+        <meta name="description" content="Megaparc - Companie lider în imobiliare și investiții. 30+ ani experiență, 500+ proiecte finalizate în Moldova." />
+        <meta name="keywords" content="investiții Moldova, imobiliare Chișinău, investiții imobiliare, companie imobiliare Moldova" />
         <meta property="og:title" content="Megaparc - We Build the Future" />
-        <meta property="og:description" content="Construim viitorul împreună. Peste 30 de ani de experiență în construcții." />
+        <meta property="og:description" content="Investim în viitorul tău. Peste 30 de ani de experiență în imobiliare și investiții." />
         <link rel="canonical" href="https://megaparc.md/" />
       </Helmet>
       <Layout>

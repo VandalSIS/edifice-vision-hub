@@ -41,7 +41,7 @@ const ServicesSection = () => {
             Serviciile Noastre
           </h2>
           <p className="section-subtitle mx-auto mt-4">
-            De la concept la finalizare, oferim soluții complete pentru toate tipurile de construcții.
+            De la concept la finalizare, oferim soluții complete pentru toate tipurile de investiții imobiliare.
           </p>
         </div>
 

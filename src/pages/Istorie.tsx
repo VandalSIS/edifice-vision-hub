@@ -96,13 +96,13 @@ const Istorie = () => {
   return (
     <>
       <Helmet>
-        <title>Istoria Noastră - Megaparc | 30+ Ani în Construcții</title>
-        <meta name="description" content="Descoperiți povestea Megaparc - de la înființare în 1995 până la poziția de lider pe piața construcțiilor din Moldova." />
+        <title>Istoria Noastră - Megaparc | 30+ Ani în Imobiliare și Investiții</title>
+        <meta name="description" content="Descoperiți povestea Megaparc - de la înființare în 1995 până la poziția de lider pe piața imobiliară din Moldova." />
       </Helmet>
       <Layout>
         <PageHero
           title="Istoria Noastră"
-          subtitle="Trei decenii de excelență în construcții"
+          subtitle="Trei decenii de excelență în imobiliare și investiții"
           image="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&q=80"
           breadcrumb={[
             { label: 'Acasă', href: '/' },

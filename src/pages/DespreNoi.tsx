@@ -66,13 +66,13 @@ const DespreNoi = () => {
   return (
     <>
       <Helmet>
-        <title>Despre Noi - Megaparc | Companie Construcții Moldova</title>
-        <meta name="description" content="Megaparc - Peste 30 de ani de experiență în construcții. Echipă de profesioniști dedicați excelenței în fiecare proiect." />
+        <title>Despre Noi - Megaparc | Companie Imobiliare și Investiții Moldova</title>
+        <meta name="description" content="Megaparc - Peste 30 de ani de experiență în imobiliare și investiții. Echipă de profesioniști dedicați excelenței în fiecare proiect." />
       </Helmet>
       <Layout>
         <PageHero
           title="Despre Noi"
-          subtitle="Construim viitorul cu pasiune și profesionalism de peste trei decenii"
+          subtitle="Investim în viitor cu pasiune și profesionalism de peste trei decenii"
           image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop&q=80"
           breadcrumb={[
             { label: 'Acasă', href: '/' },
@@ -99,9 +99,9 @@ const DespreNoi = () => {
                   <h2 className="section-title mt-4">Povestea Noastră</h2>
                 </div>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Megaparc este o companie lider pe piața construcțiilor din Moldova, cu o experiență 
+                  Megaparc este o companie lider pe piața imobiliară din Moldova, cu o experiență 
                   de peste 30 de ani. De la înființare, ne-am dedicat excelentei în fiecare proiect, 
-                  de la construcții rezidențiale moderne până la complexe comerciale și industriale 
+                  de la investiții rezidențiale moderne până la complexe comerciale și industriale 
                   de anvergură.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
@@ -119,7 +119,7 @@ const DespreNoi = () => {
                     <div>
                       <h3 className="font-heading text-xl tracking-wider mb-2">Misiune</h3>
                       <p className="text-muted-foreground text-sm">
-                        Să construim spații care îmbunătățesc calitatea vieții.
+                        Să investim în spații care îmbunătățesc calitatea vieții.
                       </p>
                     </div>
                   </div>
@@ -130,7 +130,7 @@ const DespreNoi = () => {
                     <div>
                       <h3 className="font-heading text-xl tracking-wider mb-2">Viziune</h3>
                       <p className="text-muted-foreground text-sm">
-                        Lider în inovație și sustenabilitate în construcții.
+                        Lider în inovație și sustenabilitate în investiții imobiliare.
                       </p>
                     </div>
                   </div>

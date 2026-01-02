@@ -19,8 +19,8 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact - Megaparc | Construcții Chișinău, Moldova</title>
-        <meta name="description" content="Contactați Megaparc pentru proiecte de construcții. Str. Constructorilor 45, Chișinău. Tel: +373 22 123 456" />
+        <title>Contact - Megaparc | Imobiliare și Investiții Chișinău, Moldova</title>
+        <meta name="description" content="Contactați Megaparc pentru proiecte imobiliare și investiții. Str. Constructorilor 45, Chișinău. Tel: +373 22 123 456" />
       </Helmet>
       <Layout>
         <PageHero

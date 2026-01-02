@@ -115,8 +115,8 @@ const Activitati = () => {
   return (
     <>
       <Helmet>
-        <title>Activități și Servicii - Megaparc | Construcții Moldova</title>
-        <meta name="description" content="Servicii complete de construcții: rezidențiale, comerciale, industriale, renovări, închirieri și consultanță investiții imobiliare." />
+        <title>Activități și Servicii - Megaparc | Imobiliare și Investiții Moldova</title>
+        <meta name="description" content="Servicii complete de imobiliare și investiții: rezidențiale, comerciale, industriale, renovări, închirieri și consultanță." />
       </Helmet>
       <Layout>
         <PageHero
@@ -138,7 +138,7 @@ const Activitati = () => {
               </span>
               <h2 className="section-title mt-4">Ce Oferim</h2>
               <p className="section-subtitle mx-auto mt-4">
-                De la concept la finalizare, acoperim întregul spectru al industriei construcțiilor
+                De la concept la finalizare, acoperim întregul spectru al industriei imobiliare
               </p>
             </div>
           </div>

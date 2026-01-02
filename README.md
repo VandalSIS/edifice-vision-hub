@@ -1,10 +1,10 @@
 # Megaparc - Website Oficial
 
-Website-ul oficial al companiei **Megaparc** - lider în construcții rezidențiale, comerciale și industriale din Moldova.
+Website-ul oficial al companiei **Megaparc** - lider în imobiliare și investiții din Moldova.
 
 ## Despre Proiect
 
-Site-ul prezintă activitățile, proiectele și serviciile oferite de Megaparc, companie cu peste 30 de ani de experiență în domeniul construcțiilor.
+Site-ul prezintă activitățile, proiectele și serviciile oferite de Megaparc, companie cu peste 30 de ani de experiență în domeniul imobiliar și investiții.
 
 ### Pagini Principale
 

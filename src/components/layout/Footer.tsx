@@ -17,8 +17,8 @@ const Footer = () => {
               className="h-16 w-auto"
             />
             <p className="text-secondary-foreground/70 leading-relaxed">
-              Construim viitorul împreună. Cu peste 30 de ani de experiență în construcții 
-              rezidențiale, comerciale și industriale, suntem partenerul de încredere pentru 
+              Investim în viitorul tău. Cu peste 30 de ani de experiență în imobiliare 
+              și investiții, suntem partenerul de încredere pentru 
               proiectele dumneavoastră.
             </p>
             <div className="flex gap-4">
