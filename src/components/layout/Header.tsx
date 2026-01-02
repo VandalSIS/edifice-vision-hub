@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const navigation = [
   { name: 'Acasă', href: '/' },
@@ -34,7 +33,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-card py-2'
+          ? 'bg-secondary backdrop-blur-md shadow-card py-2'
           : 'bg-transparent py-4'
       }`}
     >
@@ -45,7 +44,7 @@ const Header = () => {
             <img 
               src="/logo.png" 
               alt="Megaparc - We build the Future" 
-              className="h-12 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-14 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -59,7 +58,7 @@ const Header = () => {
                   location.pathname === item.href
                     ? 'text-primary'
                     : isScrolled
-                    ? 'text-foreground hover:text-primary'
+                    ? 'text-secondary-foreground hover:text-primary'
                     : 'text-background/90 hover:text-background'
                 }`}
               >
@@ -73,32 +72,23 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Contact Button & Mobile Menu Toggle */}
+          {/* Contact & Mobile Menu Toggle */}
           <div className="flex items-center gap-4">
             <a
               href="tel:+37322123456"
               className={`hidden md:flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${
-                isScrolled ? 'text-foreground' : 'text-background'
+                isScrolled ? 'text-secondary-foreground' : 'text-background'
               }`}
             >
               <Phone className="w-4 h-4" />
               +373 22 123 456
             </a>
 
-            <Button
-              variant={isScrolled ? 'default' : 'hero'}
-              size="sm"
-              className="hidden md:flex"
-              asChild
-            >
-              <Link to="/contact">Solicită Ofertă</Link>
-            </Button>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`lg:hidden p-2 transition-colors duration-300 ${
-                isScrolled ? 'text-foreground' : 'text-background'
+                isScrolled ? 'text-secondary-foreground' : 'text-background'
               }`}
               aria-label="Toggle menu"
             >

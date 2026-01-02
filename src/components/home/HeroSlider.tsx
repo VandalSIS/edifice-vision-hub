@@ -56,7 +56,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-[80vh] min-h-[600px] max-h-[850px] overflow-hidden">
       {/* Slides */}
       {slides.map((slide, index) => (
         <div

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#1a1a1a"/>
+  
+  <!-- Letter M for Megaparc -->
+  <path d="M6 24V8h3l5 10 5-10h3v16h-3V14l-4 8h-2l-4-8v10H6z" fill="#ffffff"/>
+  
+  <!-- Red accent bar (like in the logo) -->
+  <rect x="0" y="28" width="32" height="4" fill="#c41e1e"/>
+</svg>
+
