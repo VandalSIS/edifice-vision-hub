@@ -3,178 +3,107 @@ import Layout from '@/components/layout/Layout';
 import PageHero from '@/components/shared/PageHero';
 import { useInView } from '@/hooks/useInView';
 import { MapPin, Calendar, Ruler, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Helmet } from 'react-helmet-async';
-
-const categories = ['Toate', 'Rezidențial', 'Comercial', 'Industrial', 'Infrastructură'];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const projects = [
   {
     id: 1,
-    title: 'Complex Rezidențial Parcul Verde',
-    category: 'Rezidențial',
+    title: 'Bulevardul Dacia 31',
+    category: 'Comercial',
+    categoryKey: 'commercial',
     location: 'Chișinău',
     year: '2024',
-    area: '25,000 mp',
-    description: 'Complex modern cu 120 apartamente premium, spații verzi și facilități complete pentru locatari.',
+    area: '5,500 mp',
+    description: 'Centru comercial modern cu arhitectură contemporană turcoaz. Sediul central IMC Group.',
     images: [
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop&q=80',
+      '/DJI_20251217160951_0083_D.jpg',
+      '/DJI_20251217161152_0086_D.jpg',
     ],
   },
   {
     id: 2,
-    title: 'Centru Comercial Central Plaza',
-    category: 'Comercial',
-    location: 'Chișinău',
-    year: '2023',
-    area: '15,000 mp',
-    description: 'Centru comercial modern cu peste 50 de magazine, cinema și food court.',
+    title: 'Complex Rezidențial Vatra',
+    category: 'Rezidențial',
+    categoryKey: 'residential',
+    location: 'Vatra',
+    year: '2024',
+    area: '12,000 mp',
+    description: 'Complex de vile premium lângă lac cu vedere panoramică și finisaje de lux.',
     images: [
-      'https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1554224311-beee460201e4?w=1200&h=800&fit=crop&q=80',
+      '/DJI_20251218172052_0196_D.jpg',
     ],
   },
   {
     id: 3,
-    title: 'Clădire Birouri TechHub',
+    title: 'Bulevardul Moscova 9',
     category: 'Comercial',
+    categoryKey: 'commercial',
     location: 'Chișinău',
     year: '2023',
-    area: '12,000 mp',
-    description: 'Clădire de birouri clasa A cu 8 etaje, certificare BREEAM și tehnologii smart building.',
+    area: '3,200 mp',
+    description: 'Centru comercial de cartier cu magazine, restaurant și servicii diverse.',
     images: [
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop&q=80',
+      '/DJI_20251217194507_0171_D.jpg',
     ],
   },
   {
     id: 4,
-    title: 'Hală Industrială LogiPark',
-    category: 'Industrial',
-    location: 'Bălți',
-    year: '2022',
-    area: '8,000 mp',
-    description: 'Hală logistică modernă cu docuri de încărcare și sisteme de management automatizat.',
+    title: 'Bulevardul Moscova 20',
+    category: 'Investiții',
+    categoryKey: 'investments',
+    location: 'Chișinău',
+    year: '2023',
+    area: '2,800 mp',
+    description: 'Proiect de dezvoltare și renovare pentru spații comerciale și birouri.',
     images: [
-      'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1590846083693-f23fdede3a7e?w=1200&h=800&fit=crop&q=80',
+      '/DJI_20251217190215_0134_D.jpg',
     ],
   },
   {
     id: 5,
-    title: 'Ansamblu Rezidențial Sunset',
-    category: 'Rezidențial',
+    title: 'Florilor',
+    category: 'Comercial',
+    categoryKey: 'commercial',
     location: 'Chișinău',
     year: '2022',
-    area: '18,000 mp',
-    description: 'Ansamblu de vile premium cu design contemporan și grădini private.',
+    area: '4,000 mp',
+    description: 'Clădire comercială modernă cu spații pentru birouri și retail.',
     images: [
-      'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&h=800&fit=crop&q=80',
+      '/DJI_20251217192608_0160_D.jpg',
     ],
   },
   {
     id: 6,
-    title: 'Complex Comercial Metro',
+    title: 'Spații Comerciale Interior',
     category: 'Comercial',
+    categoryKey: 'commercial',
     location: 'Chișinău',
-    year: '2021',
-    area: '20,000 mp',
-    description: 'Complex multifuncțional cu retail, birouri și spații de entertainment.',
+    year: '2024',
+    area: '1,500 mp',
+    description: 'Spații comerciale premium cu finisaje moderne și iluminare naturală.',
     images: [
-      'https://images.unsplash.com/photo-1554224311-beee460201e4?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1200&h=800&fit=crop&q=80',
-    ],
-  },
-  {
-    id: 7,
-    title: 'Depozit Frigorific Arctic',
-    category: 'Industrial',
-    location: 'Orhei',
-    year: '2021',
-    area: '5,000 mp',
-    description: 'Depozit frigorific industrial cu capacitate de 10,000 tone și sisteme de răcire eficiente.',
-    images: [
-      'https://images.unsplash.com/photo-1590846083693-f23fdede3a7e?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&h=800&fit=crop&q=80',
-    ],
-  },
-  {
-    id: 8,
-    title: 'Pod Rutier Prut',
-    category: 'Infrastructură',
-    location: 'Ungheni',
-    year: '2020',
-    area: '450 m lungime',
-    description: 'Pod rutier modern peste râul Prut cu 4 benzi de circulație.',
-    images: [
-      'https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&q=80',
-    ],
-  },
-  {
-    id: 9,
-    title: 'Bloc Rezidențial Aurora',
-    category: 'Rezidențial',
-    location: 'Chișinău',
-    year: '2020',
-    area: '14,000 mp',
-    description: 'Bloc rezidențial cu 80 apartamente, parcare subterană și spații comerciale la parter.',
-    images: [
-      'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop&q=80',
-    ],
-  },
-  {
-    id: 10,
-    title: 'Fabrica Agroalimentar Plus',
-    category: 'Industrial',
-    location: 'Cahul',
-    year: '2019',
-    area: '6,500 mp',
-    description: 'Fabrică de procesare agroalimentară cu linii de producție automatizate.',
-    images: [
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1200&h=800&fit=crop&q=80',
-    ],
-  },
-  {
-    id: 11,
-    title: 'Hotel Boutique Central',
-    category: 'Comercial',
-    location: 'Chișinău',
-    year: '2019',
-    area: '4,500 mp',
-    description: 'Hotel boutique de 4 stele cu 45 camere și restaurant panoramic.',
-    images: [
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&h=800&fit=crop&q=80',
-    ],
-  },
-  {
-    id: 12,
-    title: 'Reabilitare Drum Național M2',
-    category: 'Infrastructură',
-    location: 'Bălți - Chișinău',
-    year: '2018',
-    area: '35 km',
-    description: 'Modernizarea și extinderea drumului național cu benzi suplimentare.',
-    images: [
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop&q=80',
-      'https://images.unsplash.com/photo-1599586120429-48281b6f0ece?w=1200&h=800&fit=crop&q=80',
+      '/DSCF2702.JPG',
     ],
   },
 ];
 
 const Proiecte = () => {
-  const [activeCategory, setActiveCategory] = useState('Toate');
+  const [activeCategory, setActiveCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { ref, inView } = useInView();
+  const { t } = useLanguage();
+
+  const categories = [
+    { key: 'all', label: t('projects.filter.all') },
+    { key: 'residential', label: t('projects.filter.residential') },
+    { key: 'commercial', label: t('projects.filter.commercial') },
+    { key: 'investments', label: t('projects.filter.investments') },
+  ];
 
   const filteredProjects = projects.filter(
-    (p) => activeCategory === 'Toate' || p.category === activeCategory
+    (p) => activeCategory === 'all' || p.categoryKey === activeCategory
   );
 
   const openModal = (project: typeof projects[0]) => {
@@ -203,17 +132,17 @@ const Proiecte = () => {
   return (
     <>
       <Helmet>
-        <title>Proiecte - Megaparc | Portofoliu Imobiliare și Investiții Moldova</title>
-        <meta name="description" content="Explorați portofoliul Megaparc - peste 500 de proiecte finalizate în imobiliare rezidențial, comercial și industrial în Moldova." />
+        <title>{t('projects.hero.title')} - Megaparc | IMC Group</title>
+        <meta name="description" content={t('projects.hero.subtitle')} />
       </Helmet>
       <Layout>
         <PageHero
-          title="Proiectele Noastre"
-          subtitle="Peste 500 de proiecte care definesc peisajul urban al Moldovei"
-          image="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&q=80"
+          title={t('projects.hero.title')}
+          subtitle={t('projects.hero.subtitle')}
+          image="/DJI_20251217161152_0086_D.jpg"
           breadcrumb={[
-            { label: 'Acasă', href: '/' },
-            { label: 'Proiecte' },
+            { label: t('common.home'), href: '/' },
+            { label: t('nav.projects') },
           ]}
         />
 
@@ -224,15 +153,15 @@ const Proiecte = () => {
             <div className={`flex flex-wrap justify-center gap-4 mb-16 ${inView ? 'animate-fade-up' : 'opacity-0'}`}>
               {categories.map((cat) => (
                 <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
+                  key={cat.key}
+                  onClick={() => setActiveCategory(cat.key)}
                   className={`px-6 py-3 font-semibold uppercase text-sm tracking-wider transition-all duration-300 ${
-                    activeCategory === cat
+                    activeCategory === cat.key
                       ? 'bg-primary text-primary-foreground'
                       : 'bg-muted text-muted-foreground hover:bg-secondary hover:text-secondary-foreground'
                   }`}
                 >
-                  {cat}
+                  {cat.label}
                 </button>
               ))}
             </div>
@@ -351,17 +280,17 @@ const Proiecte = () => {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="border border-border p-4">
                     <MapPin className="w-5 h-5 text-primary mb-2" />
-                    <span className="text-sm text-muted-foreground">Locație</span>
+                    <span className="text-sm text-muted-foreground">{t('projects.location')}</span>
                     <p className="font-semibold">{selectedProject.location}</p>
                   </div>
                   <div className="border border-border p-4">
                     <Calendar className="w-5 h-5 text-primary mb-2" />
-                    <span className="text-sm text-muted-foreground">An</span>
+                    <span className="text-sm text-muted-foreground">{t('projects.year')}</span>
                     <p className="font-semibold">{selectedProject.year}</p>
                   </div>
                   <div className="border border-border p-4">
                     <Ruler className="w-5 h-5 text-primary mb-2" />
-                    <span className="text-sm text-muted-foreground">Suprafață</span>
+                    <span className="text-sm text-muted-foreground">{t('projects.area')}</span>
                     <p className="font-semibold">{selectedProject.area}</p>
                   </div>
                 </div>

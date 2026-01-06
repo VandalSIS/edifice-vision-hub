@@ -2,21 +2,24 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
-
-const navigation = [
-  { name: 'Acasă', href: '/' },
-  { name: 'Despre Noi', href: '/despre-noi' },
-  { name: 'Activități', href: '/activitati' },
-  { name: 'Proiecte', href: '/proiecte' },
-  { name: 'Sustenabilitate', href: '/sustenabilitate' },
-  { name: 'Cariere', href: '/cariere' },
-  { name: 'Contact', href: '/contact' },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
+
+  const navigation = [
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/despre-noi' },
+    { name: t('nav.activities'), href: '/activitati' },
+    { name: t('nav.projects'), href: '/proiecte' },
+    { name: t('nav.news'), href: '/stiri' },
+    { name: t('nav.sustainability'), href: '/sustenabilitate' },
+    { name: t('nav.careers'), href: '/cariere' },
+    { name: t('nav.contact'), href: '/contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +56,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-1">
             {navigation.map((item) => (
               <Link
-                key={item.name}
+                key={item.href}
                 to={item.href}
                 className={`px-4 py-2 text-sm font-medium uppercase tracking-wider transition-all duration-300 relative group ${
                   location.pathname === item.href
@@ -112,7 +115,7 @@ const Header = () => {
           <nav className="bg-secondary p-6 space-y-2">
             {navigation.map((item, index) => (
               <Link
-                key={item.name}
+                key={item.href}
                 to={item.href}
                 className={`block py-3 px-4 text-secondary-foreground font-medium uppercase tracking-wider transition-all duration-300 hover:bg-primary hover:text-primary-foreground ${
                   location.pathname === item.href ? 'bg-primary text-primary-foreground' : ''
@@ -130,6 +133,9 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 +373 (022) 835-235
               </a>
+              <div className="px-4 py-2">
+                <LanguageSwitcher variant="dark" />
+              </div>
             </div>
           </nav>
         </div>

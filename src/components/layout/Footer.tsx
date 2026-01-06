@@ -1,8 +1,28 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Clock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
+
+  const quickLinks = [
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/despre-noi' },
+    { name: t('nav.activities'), href: '/activitati' },
+    { name: t('nav.projects'), href: '/proiecte' },
+    { name: t('nav.news'), href: '/stiri' },
+    { name: t('nav.sustainability'), href: '/sustenabilitate' },
+    { name: t('nav.careers'), href: '/cariere' },
+    { name: t('nav.contact'), href: '/contact' },
+  ];
+
+  const services = [
+    t('services.realEstate'),
+    t('services.commercial'),
+    t('services.investments'),
+    t('activities.hospitality.title'),
+  ];
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
@@ -17,9 +37,7 @@ const Footer = () => {
               className="h-16 w-auto"
             />
             <p className="text-secondary-foreground/70 leading-relaxed">
-              Investim în viitorul tău. Cu peste 30 de ani de experiență în imobiliare 
-              și investiții, suntem partenerul de încredere pentru 
-              proiectele dumneavoastră.
+              {t('footer.description')}
             </p>
             <div className="flex gap-4">
               <a
@@ -54,18 +72,10 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <h3 className="font-heading text-2xl tracking-wider">Link-uri Rapide</h3>
+            <h3 className="font-heading text-2xl tracking-wider">{t('footer.quickLinks')}</h3>
             <ul className="space-y-3">
-              {[
-                { name: 'Acasă', href: '/' },
-                { name: 'Despre Noi', href: '/despre-noi' },
-                { name: 'Activități', href: '/activitati' },
-                { name: 'Proiecte', href: '/proiecte' },
-                { name: 'Sustenabilitate', href: '/sustenabilitate' },
-                { name: 'Cariere', href: '/cariere' },
-                { name: 'Contact', href: '/contact' },
-              ].map((link) => (
-                <li key={link.name}>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
                   <Link
                     to={link.href}
                     className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 flex items-center gap-2 group"
@@ -80,16 +90,9 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-6">
-            <h3 className="font-heading text-2xl tracking-wider">Servicii</h3>
+            <h3 className="font-heading text-2xl tracking-wider">{t('footer.services')}</h3>
             <ul className="space-y-3">
-              {[
-                'Construcții Rezidențiale',
-                'Construcții Comerciale',
-                'Construcții Industriale',
-                'Renovări și Modernizări',
-                'Închirieri Spații',
-                'Consultanță Investiții',
-              ].map((service) => (
+              {services.map((service) => (
                 <li key={service}>
                   <Link
                     to="/activitati"
@@ -105,13 +108,13 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="space-y-6">
-            <h3 className="font-heading text-2xl tracking-wider">Contact</h3>
+            <h3 className="font-heading text-2xl tracking-wider">{t('footer.contact')}</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-secondary-foreground/70">
-                  Bd. Dacia 31, MD-2060<br />
-                  Chișinău, Republica Moldova
+                  {t('footer.address')}<br />
+                  {t('footer.country')}
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -143,7 +146,7 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-primary flex-shrink-0" />
                 <span className="text-secondary-foreground/70">
-                  Luni - Vineri: 9:00 - 18:00
+                  {t('footer.schedule')}
                 </span>
               </li>
             </ul>
@@ -156,20 +159,20 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-secondary-foreground/50 text-sm">
-              © {currentYear} Megaparc. Toate drepturile rezervate.
+              © {currentYear} Megaparc. {t('footer.rights')}
             </p>
             <div className="flex gap-6 text-sm">
               <Link
                 to="/privacy"
                 className="text-secondary-foreground/50 hover:text-primary transition-colors duration-300"
               >
-                Politica de Confidențialitate
+                Privacy Policy
               </Link>
               <Link
                 to="/termeni"
                 className="text-secondary-foreground/50 hover:text-primary transition-colors duration-300"
               >
-                Termeni și Condiții
+                Terms & Conditions
               </Link>
             </div>
           </div>

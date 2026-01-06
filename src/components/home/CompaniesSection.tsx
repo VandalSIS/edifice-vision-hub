@@ -1,36 +1,38 @@
 import { useInView } from '@/hooks/useInView';
 import { Building2, Calendar, Network } from 'lucide-react';
-
-const companies = [
-  {
-    name: 'IMC GROUP',
-    founded: '07.12.2006',
-    branches: 4,
-    description: 'Holding de investiții și management',
-  },
-  {
-    name: 'MEGAPARC',
-    founded: '22.06.2005',
-    branches: 7,
-    description: 'Dezvoltare imobiliară și investiții',
-    highlight: true,
-  },
-  {
-    name: 'FLYING PIG RESTAURANT',
-    founded: '07.12.2006',
-    branches: 2,
-    description: 'Servicii de restaurant și catering',
-  },
-  {
-    name: 'ESTATE INDUSTRY GROUP',
-    founded: '12.06.2014',
-    branches: 2,
-    description: 'Industrie și producție',
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const CompaniesSection = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
+  const { t } = useLanguage();
+
+  const companies = [
+    {
+      name: 'IMC GROUP',
+      founded: '07.12.2006',
+      branches: 4,
+      description: t('companies.imc.desc'),
+    },
+    {
+      name: 'MEGAPARC',
+      founded: '22.06.2005',
+      branches: 7,
+      description: t('companies.megaparc.desc'),
+      highlight: true,
+    },
+    {
+      name: 'FLYING PIG RESTAURANT',
+      founded: '07.12.2006',
+      branches: 2,
+      description: t('companies.flyingpig.desc'),
+    },
+    {
+      name: 'ESTATE INDUSTRY GROUP',
+      founded: '12.06.2014',
+      branches: 2,
+      description: t('companies.estate.desc'),
+    },
+  ];
 
   return (
     <section ref={ref} className="py-24 bg-background relative">
@@ -42,13 +44,13 @@ const CompaniesSection = () => {
         {/* Section Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 ${inView ? 'animate-fade-up' : 'opacity-0'}`}>
           <span className="text-primary font-semibold uppercase tracking-widest text-sm">
-            Portofoliul Nostru
+            {t('companies.label')}
           </span>
           <h2 className="section-title mt-4">
-            Companii din Grup
+            {t('companies.title')}
           </h2>
           <p className="section-subtitle mx-auto mt-4">
-            Patru companii principale cu activități diversificate în multiple domenii
+            {t('companies.subtitle')}
           </p>
         </div>
 
@@ -87,12 +89,12 @@ const CompaniesSection = () => {
                 <div className="space-y-3 pt-4 border-t border-white/10">
                   <div className="flex items-center gap-2 text-sm">
                     <Calendar className="w-4 h-4 text-primary" />
-                    <span className="text-white/70">Fondat:</span>
+                    <span className="text-white/70">{t('companies.founded')}:</span>
                     <span className="font-semibold ml-auto text-white">{company.founded}</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Network className="w-4 h-4 text-primary" />
-                    <span className="text-white/70">Filiale:</span>
+                    <span className="text-white/70">{t('companies.branches')}:</span>
                     <span className="font-semibold ml-auto text-white">{company.branches}</span>
                   </div>
                 </div>
@@ -106,12 +108,12 @@ const CompaniesSection = () => {
           <div className="inline-flex items-center gap-6 bg-secondary px-8 py-4 border-t-4 border-primary">
             <div>
               <div className="font-heading text-3xl text-primary">16</div>
-              <div className="text-xs text-white/80 uppercase tracking-wider">Total Companii</div>
+              <div className="text-xs text-white/80 uppercase tracking-wider">{t('companies.totalCompanies')}</div>
             </div>
             <div className="w-px h-12 bg-white/20" />
             <div>
               <div className="font-heading text-3xl text-primary">15</div>
-              <div className="text-xs text-white/80 uppercase tracking-wider">Total Filiale</div>
+              <div className="text-xs text-white/80 uppercase tracking-wider">{t('companies.totalBranches')}</div>
             </div>
           </div>
         </div>
@@ -121,4 +123,3 @@ const CompaniesSection = () => {
 };
 
 export default CompaniesSection;
-

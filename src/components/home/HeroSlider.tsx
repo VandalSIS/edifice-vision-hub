@@ -2,37 +2,39 @@ import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
-const slides = [
-  {
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop&q=80',
-    title: 'Investim în',
-    subtitle: 'Viitorul Tău',
-    description: 'Peste 30 de ani de experiență în imobiliare, investiții și dezvoltare.',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&q=80',
-    title: 'Calitate și',
-    subtitle: 'Profesionalism',
-    description: 'Fiecare proiect este o dovadă a angajamentului nostru pentru excelență.',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&h=1080&fit=crop&q=80',
-    title: 'Inovație în',
-    subtitle: 'Investiții',
-    description: 'Tehnologii moderne și soluții sustenabile pentru proiecte de viitor.',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&h=1080&fit=crop&q=80',
-    title: 'Echipă de',
-    subtitle: 'Experți',
-    description: 'Profesioniști dedicați care transformă viziunea în realitate.',
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const HeroSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const { t } = useLanguage();
+
+  const slides = [
+    {
+      image: '/DJI_20251217161152_0086_D.jpg',
+      title: t('hero.slide1.title'),
+      subtitle: t('hero.slide1.subtitle'),
+      description: t('hero.slide1.desc'),
+    },
+    {
+      image: '/DJI_20251218172052_0196_D.jpg',
+      title: t('hero.slide2.title'),
+      subtitle: t('hero.slide2.subtitle'),
+      description: t('hero.slide2.desc'),
+    },
+    {
+      image: '/DJI_20251217194507_0171_D.jpg',
+      title: t('hero.slide3.title'),
+      subtitle: t('hero.slide3.subtitle'),
+      description: t('hero.slide3.desc'),
+    },
+    {
+      image: '/DJI_20251217190215_0134_D.jpg',
+      title: t('hero.slide4.title'),
+      subtitle: t('hero.slide4.subtitle'),
+      description: t('hero.slide4.desc'),
+    },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -93,10 +95,10 @@ const HeroSlider = () => {
                 </p>
                 <div className="flex flex-wrap gap-4 pt-3">
                   <Button variant="hero" size="lg" asChild>
-                    <Link to="/proiecte">Vezi Proiecte</Link>
+                    <Link to="/proiecte">{t('hero.viewProjects')}</Link>
                   </Button>
                   <Button variant="outline" size="lg" className="border-background text-background hover:bg-background hover:text-secondary" asChild>
-                    <Link to="/contact">Solicită Ofertă</Link>
+                    <Link to="/contact">{t('hero.learnMore')}</Link>
                   </Button>
                 </div>
               </div>

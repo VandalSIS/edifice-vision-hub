@@ -3,29 +3,7 @@ import PageHero from '@/components/shared/PageHero';
 import { useInView } from '@/hooks/useInView';
 import { Target, Eye, Heart, Shield, Award, Users } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-
-const values = [
-  {
-    icon: Shield,
-    title: 'Calitate',
-    description: 'Standarde înalte în fiecare detaliu al construcției.',
-  },
-  {
-    icon: Heart,
-    title: 'Integritate',
-    description: 'Transparență și onestitate în toate relațiile de afaceri.',
-  },
-  {
-    icon: Award,
-    title: 'Excelență',
-    description: 'Depășim așteptările în fiecare proiect livrat.',
-  },
-  {
-    icon: Users,
-    title: 'Colaborare',
-    description: 'Lucrăm împreună cu clienții pentru rezultate optime.',
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const team = [
   {
@@ -62,21 +40,45 @@ const DespreNoi = () => {
   const { ref: valuesRef, inView: valuesInView } = useInView();
   const { ref: teamRef, inView: teamInView } = useInView();
   const { ref: certRef, inView: certInView } = useInView();
+  const { t } = useLanguage();
+
+  const values = [
+    {
+      icon: Shield,
+      title: t('about.values.integrity'),
+      description: t('about.values.integrity.desc'),
+    },
+    {
+      icon: Heart,
+      title: t('about.values.excellence'),
+      description: t('about.values.excellence.desc'),
+    },
+    {
+      icon: Award,
+      title: t('about.values.innovation'),
+      description: t('about.values.innovation.desc'),
+    },
+    {
+      icon: Users,
+      title: t('about.values.responsibility'),
+      description: t('about.values.responsibility.desc'),
+    },
+  ];
 
   return (
     <>
       <Helmet>
-        <title>Despre Noi - Megaparc | Companie Imobiliare și Investiții Moldova</title>
-        <meta name="description" content="Megaparc - Peste 30 de ani de experiență în imobiliare și investiții. Echipă de profesioniști dedicați excelenței în fiecare proiect." />
+        <title>{t('about.hero.title')} - Megaparc | IMC Group</title>
+        <meta name="description" content={t('about.hero.subtitle')} />
       </Helmet>
       <Layout>
         <PageHero
-          title="Despre Noi"
-          subtitle="Investim în viitor cu pasiune și profesionalism de peste trei decenii"
-          image="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&h=1080&fit=crop&q=80"
+          title={t('about.hero.title')}
+          subtitle={t('about.hero.subtitle')}
+          image="/DJI_20251217161152_0086_D.jpg"
           breadcrumb={[
-            { label: 'Acasă', href: '/' },
-            { label: 'Despre Noi' },
+            { label: t('common.home'), href: '/' },
+            { label: t('about.hero.title') },
           ]}
         />
 
@@ -86,29 +88,26 @@ const DespreNoi = () => {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div className={missionInView ? 'animate-slide-right' : 'opacity-0'}>
                 <img
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=600&fit=crop&q=80"
-                  alt="Echipa Megaparc pe șantier"
+                  src="/DSCF2702.JPG"
+                  alt="Spații comerciale Megaparc"
                   className="w-full aspect-[4/3] object-cover"
                 />
               </div>
               <div className={`space-y-8 ${missionInView ? 'animate-slide-left' : 'opacity-0'}`}>
                 <div>
                   <span className="text-primary font-semibold uppercase tracking-widest text-sm">
-                    Cine Suntem
+                    {t('about.story.label')}
                   </span>
-                  <h2 className="section-title mt-4">Povestea Noastră</h2>
+                  <h2 className="section-title mt-4">{t('about.story.title')}</h2>
                 </div>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Megaparc este o companie lider pe piața imobiliară din Moldova, cu o experiență 
-                  de peste 30 de ani. De la înființare, ne-am dedicat excelentei în fiecare proiect, 
-                  de la investiții rezidențiale moderne până la complexe comerciale și industriale 
-                  de anvergură.
+                  {t('about.story.p1')}
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Echipa noastră de profesioniști combină expertiza tehnică cu viziunea creativă 
-                  pentru a transforma orice proiect în realitate. Folosim tehnologii de ultimă 
-                  generație și materiale de cea mai înaltă calitate pentru a garanta durabilitate 
-                  și satisfacția clienților.
+                  {t('about.story.p2')}
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {t('about.story.p3')}
                 </p>
                 
                 <div className="grid grid-cols-2 gap-8 pt-8">
@@ -117,9 +116,9 @@ const DespreNoi = () => {
                       <Target className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-heading text-xl tracking-wider mb-2">Misiune</h3>
+                      <h3 className="font-heading text-xl tracking-wider mb-2">{t('about.mission.title')}</h3>
                       <p className="text-muted-foreground text-sm">
-                        Să investim în spații care îmbunătățesc calitatea vieții.
+                        {t('about.mission.desc')}
                       </p>
                     </div>
                   </div>
@@ -128,9 +127,9 @@ const DespreNoi = () => {
                       <Eye className="w-6 h-6 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-heading text-xl tracking-wider mb-2">Viziune</h3>
+                      <h3 className="font-heading text-xl tracking-wider mb-2">{t('about.vision.title')}</h3>
                       <p className="text-muted-foreground text-sm">
-                        Lider în inovație și sustenabilitate în investiții imobiliare.
+                        {t('about.vision.desc')}
                       </p>
                     </div>
                   </div>
@@ -145,15 +144,15 @@ const DespreNoi = () => {
           <div className="container mx-auto px-4">
             <div className={`text-center max-w-3xl mx-auto mb-16 ${valuesInView ? 'animate-fade-up' : 'opacity-0'}`}>
               <span className="text-primary font-semibold uppercase tracking-widest text-sm">
-                Valorile Noastre
+                {t('about.values.title')}
               </span>
-              <h2 className="section-title mt-4">Ce Ne Definește</h2>
+              <h2 className="section-title mt-4">{t('about.values.title')}</h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {values.map((value, index) => (
                 <div
-                  key={value.title}
+                  key={index}
                   className={`bg-background p-8 text-center card-hover ${
                     valuesInView ? 'animate-fade-up' : 'opacity-0'
                   }`}
@@ -175,9 +174,9 @@ const DespreNoi = () => {
           <div className="container mx-auto px-4">
             <div className={`text-center max-w-3xl mx-auto mb-16 ${teamInView ? 'animate-fade-up' : 'opacity-0'}`}>
               <span className="text-primary font-semibold uppercase tracking-widest text-sm">
-                Echipa de Conducere
+                {t('team.label')}
               </span>
-              <h2 className="section-title mt-4">Liderii Noștri</h2>
+              <h2 className="section-title mt-4">{t('team.title')}</h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -211,10 +210,10 @@ const DespreNoi = () => {
           <div className="container mx-auto px-4">
             <div className={`text-center max-w-3xl mx-auto mb-16 ${certInView ? 'animate-fade-up' : 'opacity-0'}`}>
               <span className="text-primary font-semibold uppercase tracking-widest text-sm">
-                Acreditări
+                ISO
               </span>
               <h2 className="font-heading text-5xl md:text-6xl tracking-wider mt-4">
-                Certificări și Standarde
+                Certifications
               </h2>
             </div>
 

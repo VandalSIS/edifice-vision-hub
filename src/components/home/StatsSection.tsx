@@ -1,12 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useInView } from '@/hooks/useInView';
-
-const stats = [
-  { value: 16, suffix: '', label: 'Companii în Grup' },
-  { value: 980, suffix: '+', label: 'Angajați' },
-  { value: 4, suffix: '', label: 'Continente' },
-  { value: 19, suffix: '+', label: 'Ani Experiență' },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
   const [count, setCount] = useState(0);
@@ -43,6 +37,14 @@ const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
 
 const StatsSection = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: 16, suffix: '', label: t('stats.companies') },
+    { value: 980, suffix: '+', label: t('stats.employees') },
+    { value: 4, suffix: '', label: t('stats.continents') },
+    { value: 19, suffix: '+', label: t('stats.years') },
+  ];
 
   return (
     <section 
@@ -53,7 +55,7 @@ const StatsSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&h=1080&fit=crop&q=80)',
+          backgroundImage: 'url(/DJI_20251217160951_0083_D.jpg)',
         }}
       >
         <div className="absolute inset-0 bg-secondary/95" />
@@ -63,10 +65,10 @@ const StatsSection = () => {
       <div className="relative container mx-auto px-4">
         <div className={`text-center mb-16 ${inView ? 'animate-fade-up' : 'opacity-0'}`}>
           <span className="text-primary font-semibold uppercase tracking-widest text-sm">
-            Rezultatele Noastre
+            {t('stats.label')}
           </span>
           <h2 className="font-heading text-5xl md:text-6xl text-white mt-4 tracking-wider">
-            Cifre Care Vorbesc
+            {t('stats.title')}
           </h2>
         </div>
 

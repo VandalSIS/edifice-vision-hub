@@ -1,43 +1,45 @@
 import { useInView } from '@/hooks/useInView';
 import { Globe, MapPin, Landmark, TrendingUp } from 'lucide-react';
-
-const regions = [
-  {
-    name: 'Moldova',
-    description: 'Sediul principal al societăților IMC Group',
-    countries: 1,
-    icon: Landmark,
-    highlight: true,
-    delay: 0,
-  },
-  {
-    name: 'Europa',
-    description: 'Grupul IMC în 7 țări din Europa',
-    countries: 7,
-    icon: Globe,
-    highlight: false,
-    delay: 100,
-  },
-  {
-    name: 'Asia',
-    description: 'Grupul IMC în 3 țări din Asia',
-    countries: 3,
-    icon: TrendingUp,
-    highlight: false,
-    delay: 200,
-  },
-  {
-    name: 'Africa',
-    description: 'Grupul IMC în 4 țări din Africa',
-    countries: 4,
-    icon: MapPin,
-    highlight: false,
-    delay: 300,
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const GeographySection = () => {
   const { ref, inView } = useInView({ threshold: 0.2 });
+  const { t } = useLanguage();
+
+  const regions = [
+    {
+      name: t('geo.moldova'),
+      description: t('geo.moldova.desc'),
+      countries: 1,
+      icon: Landmark,
+      highlight: true,
+      delay: 0,
+    },
+    {
+      name: t('geo.europe'),
+      description: t('geo.europe.desc'),
+      countries: 7,
+      icon: Globe,
+      highlight: false,
+      delay: 100,
+    },
+    {
+      name: t('geo.asia'),
+      description: t('geo.asia.desc'),
+      countries: 3,
+      icon: TrendingUp,
+      highlight: false,
+      delay: 200,
+    },
+    {
+      name: t('geo.africa'),
+      description: t('geo.africa.desc'),
+      countries: 4,
+      icon: MapPin,
+      highlight: false,
+      delay: 300,
+    },
+  ];
 
   return (
     <section ref={ref} className="py-24 bg-secondary relative overflow-hidden">
@@ -62,21 +64,21 @@ const GeographySection = () => {
         {/* Section Header */}
         <div className={`text-center max-w-3xl mx-auto mb-16 ${inView ? 'animate-fade-up' : 'opacity-0'}`}>
           <span className="text-primary font-semibold uppercase tracking-widest text-sm">
-            Prezență Globală
+            {t('geo.label')}
           </span>
           <h2 className="font-heading text-4xl md:text-5xl text-secondary-foreground mt-4 tracking-wider">
-            Activăm pe 4 Continente
+            {t('geo.title')}
           </h2>
           <p className="text-secondary-foreground/90 text-lg md:text-xl mx-auto mt-4 max-w-2xl">
-            IMC Group își desfășoară activitatea în peste 15 țări din întreaga lume
+            {t('geo.subtitle')}
           </p>
         </div>
 
         {/* Geography Grid with Modern Design */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {regions.map((region) => (
+          {regions.map((region, index) => (
             <div
-              key={region.name}
+              key={index}
               className={`group relative bg-background overflow-hidden ${
                 region.highlight ? 'border-2 border-primary' : 'border border-border'
               } ${inView ? 'animate-fade-up' : 'opacity-0'}`}
@@ -123,7 +125,7 @@ const GeographySection = () => {
                   </div>
                   <span className="font-semibold text-lg text-foreground">{region.countries}</span>
                   <span className="text-muted-foreground text-sm">
-                    {region.countries === 1 ? 'țară' : 'țări'}
+                    {region.countries === 1 ? t('geo.country') : t('geo.countriesPlural')}
                   </span>
                 </div>
               </div>
@@ -137,16 +139,16 @@ const GeographySection = () => {
             <Globe className="w-8 h-8 text-primary" />
             <div>
               <div className="font-heading text-3xl tracking-wider text-foreground">
-                <span className="text-primary">15+</span> Țări
+                <span className="text-primary">15+</span> {t('geo.countries')}
               </div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wider">În 4 Continente</div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wider">{t('geo.inGroup')}</div>
             </div>
             <div className="w-px h-12 bg-border" />
             <div>
               <div className="font-heading text-3xl tracking-wider text-foreground">
-                <span className="text-primary">16</span> Companii
+                <span className="text-primary">16</span> {t('team.companies')}
               </div>
-              <div className="text-xs text-muted-foreground uppercase tracking-wider">În Grup</div>
+              <div className="text-xs text-muted-foreground uppercase tracking-wider">{t('geo.inGroup')}</div>
             </div>
           </div>
         </div>
@@ -156,4 +158,3 @@ const GeographySection = () => {
 };
 
 export default GeographySection;
-
