@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { useInView } from '@/hooks/useInView';
 
 const stats = [
-  { value: 30, suffix: '+', label: 'Ani Experiență' },
-  { value: 500, suffix: '+', label: 'Proiecte Finalizate' },
-  { value: 1000, suffix: '+', label: 'Clienți Mulțumiți' },
-  { value: 50, suffix: '+', label: 'Specialiști în Echipă' },
+  { value: 16, suffix: '', label: 'Companii în Grup' },
+  { value: 980, suffix: '+', label: 'Angajați' },
+  { value: 4, suffix: '', label: 'Continente' },
+  { value: 19, suffix: '+', label: 'Ani Experiență' },
 ];
 
 const Counter = ({ end, suffix }: { end: number; suffix: string }) => {
@@ -65,7 +65,7 @@ const StatsSection = () => {
           <span className="text-primary font-semibold uppercase tracking-widest text-sm">
             Rezultatele Noastre
           </span>
-          <h2 className="font-heading text-5xl md:text-6xl text-background mt-4 tracking-wider">
+          <h2 className="font-heading text-5xl md:text-6xl text-white mt-4 tracking-wider">
             Cifre Care Vorbesc
           </h2>
         </div>
@@ -74,13 +74,13 @@ const StatsSection = () => {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`text-center p-8 border border-background/10 ${
+              className={`text-center p-8 border border-white/10 ${
                 inView ? 'animate-fade-up' : 'opacity-0'
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <Counter end={stat.value} suffix={stat.suffix} />
-              <p className="text-background/70 mt-4 uppercase tracking-wider text-sm">
+              <p className="text-white/80 mt-4 uppercase tracking-wider text-sm">
                 {stat.label}
               </p>
             </div>

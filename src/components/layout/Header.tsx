@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import LanguageSwitcher from '@/components/shared/LanguageSwitcher';
 
 const navigation = [
   { name: 'Acasă', href: '/' },
   { name: 'Despre Noi', href: '/despre-noi' },
-  { name: 'Istorie', href: '/istorie' },
   { name: 'Activități', href: '/activitati' },
   { name: 'Proiecte', href: '/proiecte' },
-  { name: 'Știri', href: '/stiri' },
+  { name: 'Sustenabilitate', href: '/sustenabilitate' },
   { name: 'Cariere', href: '/cariere' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -73,17 +73,22 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Contact & Mobile Menu Toggle */}
-          <div className="flex items-center gap-4">
+          {/* Contact, Language & Mobile Menu Toggle */}
+          <div className="flex items-center gap-2">
             <a
-              href="tel:+37322123456"
+              href="tel:+373022835235"
               className={`hidden md:flex items-center gap-2 text-sm font-medium transition-colors duration-300 ${
                 isScrolled ? 'text-secondary-foreground' : 'text-background'
               }`}
             >
               <Phone className="w-4 h-4" />
-              +373 22 123 456
+              +373 (022) 835-235
             </a>
+
+            {/* Language Switcher */}
+            <div className="hidden md:block">
+              <LanguageSwitcher variant={isScrolled ? 'dark' : 'light'} />
+            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -119,11 +124,11 @@ const Header = () => {
             ))}
             <div className="pt-4 border-t border-secondary-foreground/20">
               <a
-                href="tel:+37322123456"
+                href="tel:+373022835235"
                 className="flex items-center gap-2 py-3 px-4 text-secondary-foreground"
               >
                 <Phone className="w-4 h-4" />
-                +373 22 123 456
+                +373 (022) 835-235
               </a>
             </div>
           </nav>

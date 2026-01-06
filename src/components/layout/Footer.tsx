@@ -59,10 +59,9 @@ const Footer = () => {
               {[
                 { name: 'Acasă', href: '/' },
                 { name: 'Despre Noi', href: '/despre-noi' },
-                { name: 'Istorie', href: '/istorie' },
                 { name: 'Activități', href: '/activitati' },
                 { name: 'Proiecte', href: '/proiecte' },
-                { name: 'Știri', href: '/stiri' },
+                { name: 'Sustenabilitate', href: '/sustenabilitate' },
                 { name: 'Cariere', href: '/cariere' },
                 { name: 'Contact', href: '/contact' },
               ].map((link) => (
@@ -111,26 +110,34 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-secondary-foreground/70">
-                  Str. Constructorilor 45,<br />
-                  Chișinău, Moldova
+                  Bd. Dacia 31, MD-2060<br />
+                  Chișinău, Republica Moldova
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a
-                  href="tel:+37322123456"
-                  className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300"
-                >
-                  +373 22 123 456
-                </a>
+                <div>
+                  <a
+                    href="tel:+373022835235"
+                    className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300 block"
+                  >
+                    +373 (022) 835-235
+                  </a>
+                  <a
+                    href="tel:+373075803010"
+                    className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300"
+                  >
+                    +373 (075) 803 010
+                  </a>
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:office@megaparc.md"
+                  href="mailto:office@imc.md"
                   className="text-secondary-foreground/70 hover:text-primary transition-colors duration-300"
                 >
-                  office@megaparc.md
+                  office@imc.md
                 </a>
               </li>
               <li className="flex items-center gap-3">

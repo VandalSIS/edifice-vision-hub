@@ -20,7 +20,7 @@ const Contact = () => {
     <>
       <Helmet>
         <title>Contact - Megaparc | Imobiliare și Investiții Chișinău, Moldova</title>
-        <meta name="description" content="Contactați Megaparc pentru proiecte imobiliare și investiții. Str. Constructorilor 45, Chișinău. Tel: +373 22 123 456" />
+        <meta name="description" content="Contactați Megaparc pentru proiecte imobiliare și investiții. Bd. Dacia 31, Chișinău, MD-2060. Tel: +373 (022) 835-235" />
       </Helmet>
       <Layout>
         <PageHero
@@ -39,9 +39,9 @@ const Contact = () => {
                 <h2 className="section-title mt-4 mb-8">Hai Să Discutăm</h2>
                 
                 <div className="space-y-6 mb-8">
-                  <div className="flex gap-4"><MapPin className="w-6 h-6 text-primary flex-shrink-0" /><div><h3 className="font-semibold mb-1">Adresă</h3><p className="text-muted-foreground">Str. Constructorilor 45, Chișinău, Moldova</p></div></div>
-                  <div className="flex gap-4"><Phone className="w-6 h-6 text-primary flex-shrink-0" /><div><h3 className="font-semibold mb-1">Telefon</h3><a href="tel:+37322123456" className="text-muted-foreground hover:text-primary">+373 22 123 456</a></div></div>
-                  <div className="flex gap-4"><Mail className="w-6 h-6 text-primary flex-shrink-0" /><div><h3 className="font-semibold mb-1">Email</h3><a href="mailto:office@megaparc.md" className="text-muted-foreground hover:text-primary">office@megaparc.md</a></div></div>
+                  <div className="flex gap-4"><MapPin className="w-6 h-6 text-primary flex-shrink-0" /><div><h3 className="font-semibold mb-1">Adresă</h3><p className="text-muted-foreground">Bd. Dacia 31, Chișinău, MD-2060<br />Republica Moldova</p></div></div>
+                  <div className="flex gap-4"><Phone className="w-6 h-6 text-primary flex-shrink-0" /><div><h3 className="font-semibold mb-1">Telefon</h3><a href="tel:+373022835235" className="text-muted-foreground hover:text-primary block">+373 (022) 835-235</a><a href="tel:+373075803010" className="text-muted-foreground hover:text-primary">+373 (075) 803 010</a></div></div>
+                  <div className="flex gap-4"><Mail className="w-6 h-6 text-primary flex-shrink-0" /><div><h3 className="font-semibold mb-1">Email</h3><a href="mailto:office@imc.md" className="text-muted-foreground hover:text-primary">office@imc.md</a></div></div>
                   <div className="flex gap-4"><Clock className="w-6 h-6 text-primary flex-shrink-0" /><div><h3 className="font-semibold mb-1">Program</h3><p className="text-muted-foreground">Luni - Vineri: 9:00 - 18:00</p></div></div>
                 </div>
 
