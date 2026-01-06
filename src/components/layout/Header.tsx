@@ -88,10 +88,8 @@ const Header = () => {
               +373 (022) 835-235
             </a>
 
-            {/* Language Switcher */}
-            <div className="hidden md:block">
-              <LanguageSwitcher variant={isScrolled ? 'dark' : 'light'} />
-            </div>
+            {/* Language Switcher - visible on all screens */}
+            <LanguageSwitcher variant={isScrolled ? 'dark' : 'light'} />
 
             {/* Mobile Menu Button */}
             <button
@@ -133,9 +131,6 @@ const Header = () => {
                 <Phone className="w-4 h-4" />
                 +373 (022) 835-235
               </a>
-              <div className="px-4 py-2">
-                <LanguageSwitcher variant="dark" />
-              </div>
             </div>
           </nav>
         </div>
